@@ -140,7 +140,7 @@ export async function fetchFilteredInvoices(
 }
 
 export async function fetchInvoicesPages(query: string) {
-  unstable_noStore();
+  noStore();
 
   try {
     const count = await sql`SELECT COUNT(*)
@@ -163,7 +163,7 @@ export async function fetchInvoicesPages(query: string) {
 }
 
 export async function fetchInvoiceById(id: string) {
-  unstable_noStore();
+  noStore();
 
   try {
     const data = await sql<InvoiceForm>`
@@ -208,7 +208,7 @@ export async function fetchCustomers() {
 }
 
 export async function fetchFilteredCustomers(query: string) {
-  unstable_noStore();
+  noStore();
 
   try {
     const data = await sql<CustomersTableType>`
